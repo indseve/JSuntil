@@ -1,0 +1,32 @@
+//根据键值对寻找元素索引
+Array.prototype.keyValueOf = function (key,value) {    
+    $t = this;
+
+    for (var i = 0; i < $t.length; i++) {
+        if ($t[i][key] == value) {
+            return $t[i]
+        }
+    }
+    return undefined;
+};
+
+//根据键值对寻找元素
+Array.prototype.findIndexByKeyValue = function (key, value) {
+    $t = this;
+
+    for (var i = 0; i < $t.length; i++) {
+        if ($t[i][key] == value) {
+            return i
+        }
+    }
+    return undefined;
+};
+
+//根据键值对删除元素
+Array.prototype.remove = function (key, value) {
+    $t = this;
+
+    let index = $t.findIndexByKeyValue(key, value);
+
+    return $t.splice(index, 1);
+};
