@@ -19,7 +19,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
 }
-
+//日期加减
 Date.prototype.addDate = function(dates){
     let date = this.getDate();
     return this.setDate(date + dates);    
